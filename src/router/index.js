@@ -1,4 +1,6 @@
 import App from '@/App.vue'
+import LoginSignupManager from '@/components/LoginSignupManager.vue'
+import ProductManager from '@/components/ProductManager.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -6,8 +8,23 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: App,
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: LoginSignupManager,
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: LoginSignupManager,
+    },
+    {
+      path: '/products',
+      name: 'ProductList',
+      component: ProductManager,
     },
   ],
 })
