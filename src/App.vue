@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <h1 class="text-amber-600">Hello World</h1>
-  </div>
+  Hello World
   <RouterView />
 </template>
 
