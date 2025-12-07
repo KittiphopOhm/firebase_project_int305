@@ -1,9 +1,9 @@
 <script setup>
-
+import Button from 'primevue/button'
 </script>
 
 <template>
-  Hello World
+  <Button label="Profile" icon="pi pi-user" severity="contrast"/>
   <RouterView />
 </template>
 
