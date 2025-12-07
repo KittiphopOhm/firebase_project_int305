@@ -26,6 +26,11 @@ const router = createRouter({
       name: 'ProductList',
       component: ProductManager,
     },
+    {
+      path: '/products/:brand',
+      name: 'ProductListBrand',
+      component: ProductManager,
+    },
   ],
 })
 
