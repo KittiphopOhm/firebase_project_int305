@@ -21,23 +21,6 @@ const resetFilter = () => {
 
 <template>
     <div class="w-full h-full space-y-5 bg-gray-100">
-        <div class="w-full h-[90vh]">
-            <div class="w-full h-full">
-                <div class="relative w-full h-full">
-                    <img 
-                        class="w-full h-full object-cover object-center" 
-                        src="https://www.apple.com/v/airpods-max/j/images/overview/bento/midnight/bento_1_airpod_max_midnight__4jy1tkqh9qay_xlarge.jpg" 
-                        alt="AirPods Max"
-                    >
-                    <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 lg:bottom-10 lg:right-12">
-                        <button class="py-2 px-6 sm:py-2.5 sm:px-8 md:py-3 md:px-10 lg:py-3 lg:px-12 xl:px-15 bg-blue-400 hover:bg-blue-500 transition-colors rounded-full text-sm sm:text-base font-semibold cursor-pointer shadow-lg">
-                            Buy
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="w-full h-full p-10">
             <div class="w-full h-full">
                 <div>
@@ -53,6 +36,9 @@ const resetFilter = () => {
 
                 <div class="w-full h-full">
                     <div class="w-full h-full flex flex-col justify-center items-center">
+                        <div v-if="products.length <= 0">
+                            <h1 class="text-[50px] m-3 text-gray-400">No Products</h1>
+                        </div>
                         <div class="w-full h-full grid grid-cols-3 gap-y-20 gap-x-10">
                             <div v-for="product in products" :key="product.id">
                                 <div class="relative w-full h-[500px] flex flex-col justify-center items-center bg-white rounded-2xl shadow-xl p-10">

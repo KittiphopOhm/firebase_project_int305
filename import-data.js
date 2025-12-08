@@ -130,9 +130,9 @@ var products = [
     "category": "Earbuds",
     "stock": 15,
     "images": [
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/03_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/9_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/10_M?$productIntroPlatemobile$&fmt=png-alpha",
+      "https://mediam.dotlife.store/media/catalog/product/cache/3b7e899159f673788675d87d1d929a98/_/s/_sony_wf-1000xm5_-_black._001_1.jpeg",
+      "https://mediam.dotlife.store/media/catalog/product/cache/3b7e899159f673788675d87d1d929a98/_/s/_sony_wf-1000xm5_-_black._002_1.jpeg",
+      "https://mediam.dotlife.store/media/catalog/product/cache/3b7e899159f673788675d87d1d929a98/_/s/_sony_wf-1000xm5_-_black._004_1.jpeg"
     ]
   },
   {
@@ -174,10 +174,9 @@ var products = [
     "category": "Headphones",
     "stock": 28,
     "images": [
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/WH1000XM6_Product_intro_01_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/WH1000XM6_Product_intro_02_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/WH1000XM6_Product_intro_03_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/WH1000XM6_Product_intro_07_M?$productIntroPlatemobile$&fmt=png-alpha",
+      "https://mediam.dotlife.store/media/catalog/product/cache/3b7e899159f673788675d87d1d929a98/s/o/sony_audio_wh-1000xm6_over-ear_headphone_-_black.001_5.jpeg",
+      "https://mediam.dotlife.store/media/catalog/product/cache/3b7e899159f673788675d87d1d929a98/s/o/sony_audio_wh-1000xm6_over-ear_headphone_-_black.002_4.jpeg",
+      "https://mediam.dotlife.store/media/catalog/product/cache/3b7e899159f673788675d87d1d929a98/s/o/sony_audio_wh-1000xm6_over-ear_headphone_-_black.004_3.jpeg"
     ]
   },
   {
@@ -190,10 +189,7 @@ var products = [
     "category": "Headphones",
     "stock": 30,
     "images": [
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/wh-ch720_black01_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/wh-ch720_black05_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/wh-ch720_black06_M?$productIntroPlatemobile$&fmt=png-alpha",
-      "https://sony.scene7.com/is/image/sonyglobalsolutions/wh-ch720_black07_M?$productIntroPlatemobile$&fmt=png-alpha"
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/0/0/000287618_wh-ch720nbce_bk.jpg"
     ]
   },
 
@@ -208,10 +204,8 @@ var products = [
     "category": "Headphones",
     "stock": 35,
     "images": [
-      "https://new-edifier-us-oss.edifier.com/images/20230328/d355c57c4f4a47b7f109c7f6bd50ee20.png",
-      "https://new-edifier-us-oss.edifier.com/images/20230328/bf78d44d13ea49afc4f17d9617948cf0.png",
-      "https://new-edifier-us-oss.edifier.com/images/20230328/b0d03c8c6e0604478b2f3a184654121e.png",
-      "https://new-edifier-us-oss.edifier.com/images/20230328/e9c9f1ee1412d7d710ac0eb90b2b58df.png"
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/8/2/820_plus.2783_.png",
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/8/2/820_plus.2784_.png",
     ]
   },
   {
@@ -224,10 +218,9 @@ var products = [
     "category": "Headphones",
     "stock": 22,
     "images": [
-      "https://new-edifier-us-oss.edifier.com/images/20240611/b663595f88c520daa9d3cbf1423c9fd5.png",
-      "https://new-edifier-us-oss.edifier.com/images/20240611/5c74e5ff454a504437f7d9b2d6d8030d.png",
-      "https://new-edifier-us-oss.edifier.com/images/20240611/d29c43ddc3ef680db925f41f73074d1e.png",
-      "https://new-edifier-us-oss.edifier.com/images/20240611/20c7a06a809b5345b776ffddecc36fe1.png"
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/w/8/w830_black01.jpg",
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/w/8/w830_black04.jpg",
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/w/8/w830_black05.jpg"
     ]
   },
   {
@@ -240,26 +233,7 @@ var products = [
     "category": "Earbuds",
     "stock": 40,
     "images": [
-      "https://new-edifier-us-oss.edifier.com/images/20221122/03cafb31f46d5b8b750f38f60d894ede.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221122/784fa57ea7fef42f6591cd2a8c85f867.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221122/3b195688bb41e26ae0cae0da52d7fdcb.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221122/1cd07c13d42e292ffb651ae241b9a147.png"
-    ]
-  },
-  {
-    "model": "NeoBuds Pro",
-    "price": 129.00,
-    "brand": "Edifier",
-    "title": "Hybrid ANC true wireless earphones with Hi-Res.",
-    "colors": ["Black"],
-    "rating": 4.6,
-    "category": "Earbuds",
-    "stock": 25,
-    "images": [
-      "https://new-edifier-us-oss.edifier.com/images/20221123/811a4f67d16b98072e34638ab9384c7e.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221123/ab0d8e3be7d73e119961f957952ce58e.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221123/1a045548597a87976c682cb4a21230ab.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221123/c21707608fbe3330d2423b4c3aa6954e.png",
+      "https://cdn14.425degree.com/media/amasty/webp/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/e/d/edifier_tws1_pro_darkgrey01_jpg.webp"
     ]
   },
   {
@@ -272,10 +246,9 @@ var products = [
     "category": "Earbuds",
     "stock": 33,
     "images": [
-      "https://new-edifier-us-oss.edifier.com/images/20221125/ced0027e6ab10592dfc773fd6856042c.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221125/fe4353af3733cf58257a85ec2cf459da.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221125/d6312a9f553f0698ba79738b2b0e6b02.png",
-      "https://new-edifier-us-oss.edifier.com/images/20221125/d9e8c8a1fea8c21a1cd71e1ddc3ccff2.png"
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/e/d/edifier_w240tn_black_01.jpg",
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/e/d/edifier_w240tn_black_08.jpg",
+      "https://cdn14.425degree.com/media/catalog/product/cache/16f787c0803d70727d149195af4aa9dd/e/d/edifier_w240tn_black_04.jpg"
     ]
   },
 

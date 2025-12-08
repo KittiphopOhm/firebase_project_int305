@@ -5,6 +5,7 @@ import { computed, onMounted, ref, watch } from 'vue';
 import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import db from '../../firebase/init';
 import { useRoute } from 'vue-router';
+import MainImages from './MainImages.vue';
 
 const route = useRoute()
 const brand = computed(() => route.params.brand)
@@ -78,14 +79,12 @@ onMounted(() => {
     fetchBrnads()
     fetchProducts()
 })
-
-
-
 </script>
 
 <template>
     <div>
         <Navbar :brands="brands" />
+        <MainImages />
         <ProductView :products="products" @filter="filterByCategories" />
     </div>
 </template>
