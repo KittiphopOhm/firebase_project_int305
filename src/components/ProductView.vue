@@ -1,13 +1,10 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 
 const route = useRoute()
-const brand = ref(route.params.brand)
-
-
-
+const brand = computed(() => route.params.brand)
 </script>
 
 <template>
