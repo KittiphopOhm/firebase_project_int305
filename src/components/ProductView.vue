@@ -20,7 +20,7 @@ const resetFilter = () => {
 </script>
 
 <template>
-    <div class="w-full h-full space-y-5 bg-gray-100">
+    <div class="w-full h-full space-y-5 bg-gray-50">
         <div class="w-full h-full p-10">
             <div class="w-full h-full">
                 <div>
