@@ -38,7 +38,7 @@ var brands = [
     "name": "Logitech"
   },
   {
-    "name": "Audio‑Technica"
+    "name": "Beats"
   },
 ]
 
@@ -90,7 +90,7 @@ var products = [
   {
     "model": "Beats Studio Buds+",
     "price": 169.00,
-    "brand": "Apple",
+    "brand": "Beats",
     "title": "Powerful, balanced sound in a compact design.",
     "colors": ["Black", "Transparent", "Ivory"],
     "rating": 4.6,
@@ -105,7 +105,7 @@ var products = [
   {
     "model": "Beats Studio Pro Wireless",
     "price": 349.99,
-    "brand": "Apple",
+    "brand": "Beats",
     "title": "Secure-fit wireless headphones for active use.",
     "colors": ["Black", "Navy", "Sandstone", "Deep Brown"],
     "rating": 4.7,
