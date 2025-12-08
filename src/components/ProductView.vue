@@ -2,15 +2,21 @@
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
-
 const props = defineProps({
     products: {
         type: Array,
         required: true
     }
 })
+const emits = defineEmits(['filter'])
 const route = useRoute()
 const brand = computed(() => route.params.brand)
+const categories = ref([])
+const resetFilter = () => {
+  categories.value = []
+  emits('filter', [])
+}
+
 </script>
 
 <template>
@@ -37,6 +43,13 @@ const brand = computed(() => route.params.brand)
                 <div>
                     <h1 class="text-[50px] font-semibold">{{ !brand ? "Products" : brand }}</h1>
                 </div>
+                <form class="mb-5">
+                    <input v-model="categories" @change="$emit('filter', categories)" value="Headphones" class="btn checked:bg-blue-400 checked:border-blue-400" type="checkbox" name="frameworks" aria-label="Headphones"/>
+                    <input v-model="categories" @change="$emit('filter', categories)" value="Gaming Headset" class="btn  ml-1 checked:bg-blue-400 checked:border-blue-400" type="checkbox" name="frameworks" aria-label="Gaming Headset"/>
+                    <input v-model="categories" @change="$emit('filter', categories)" value="Earbuds" class="btn  ml-1 checked:bg-blue-400 checked:border-blue-400" type="checkbox" name="frameworks" aria-label="Earbuds"/>
+                    <input v-model="categories" @change="$emit('filter', categories)" value="Speaker" class="btn  ml-1 checked:bg-blue-400 checked:border-blue-400" type="checkbox" name="frameworks" aria-label="Speaker"/>
+                    <input @click="resetFilter" class="btn btn-square  ml-1 checked:bg-blue-400 checked:border-blue-400" type="reset" value="×"/>
+                </form>
 
                 <div class="w-full h-full">
                     <div class="w-full h-full flex flex-col justify-center items-center">
