@@ -17,7 +17,7 @@
                 </video>
 
                 <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 lg:bottom-10 lg:right-12">
-                    <button class="py-2 px-6 sm:py-2.5 sm:px-8 md:py-3 md:px-10 bg-blue-400 hover:bg-blue-500 transition-colors rounded-full text-sm sm:text-base font-semibold cursor-pointer shadow-lg">
+                    <button class="py-2 px-6 sm:py-2.5 sm:px-8 md:py-3 md:px-10 text-white bg-blue-400 hover:bg-blue-500 transition-colors rounded-full text-sm sm:text-base font-semibold cursor-pointer shadow-lg">
                     Buy
                     </button>
                 </div>
