@@ -28,7 +28,7 @@ onMounted(() => {
         <div class="w-full bg-gray-50 p-3 fixed top-0 left-0 z-50">
             <div class="w-full flex justify-center items-center gap-x-6">
                 <router-link :to="{ name: 'ProductList' }">
-                    <p class="font-semibold text-[14px]">Headphone Shop</p>
+                    <p class="font-semibold text-[14px]">Sound Shop</p>
                 </router-link>
 
                 <div v-for="(brand, index) in brands" :key="index">
