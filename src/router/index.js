@@ -1,6 +1,7 @@
 import App from '@/App.vue'
 import LoginSignupManager from '@/components/LoginSignupManager.vue'
 import ProductManager from '@/components/ProductManager.vue'
+import ProductDetail from '@/components/ProductDetail.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -30,6 +31,11 @@ const router = createRouter({
       path: '/products/:brand',
       name: 'ProductListBrand',
       component: ProductManager,
+    },
+    {
+      path: '/products/:brand/:id',
+      name: 'ProductDetail',
+      component: ProductDetail,
     },
   ],
 })

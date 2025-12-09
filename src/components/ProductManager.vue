@@ -32,20 +32,6 @@ watch(brand, () => {
     fetchProducts()
 })
 
-const brands = ref([])
-const fetchBrnads = () => {
-    const brandColl = collection(db, "brands")
-    const qry = query(brandColl, orderBy("name", "asc"))
-    onSnapshot(qry, (snapshot) => {
-        brands.value = []
-        snapshot.forEach((doc) => {
-            let data = doc.data()
-            data.id = doc.id
-            brands.value.push(data)
-        })
-    })
-}
-
 const filterByCategories = (categories) => {
     const productsColl = collection(db, "products")
     if (categories.length > 0 && brand.value) {
@@ -76,14 +62,13 @@ const filterByCategories = (categories) => {
 }
 
 onMounted(() => {
-    fetchBrnads()
     fetchProducts()
 })
 </script>
 
 <template>
     <div>
-        <Navbar :brands="brands" />
+        <Navbar />
         <MainImages />
         <ProductView :products="products" @filter="filterByCategories" />
     </div>

@@ -46,7 +46,7 @@ const resetFilter = () => {
                             <h1 class="text-[50px] m-3 text-gray-400">No Products</h1>
                         </div>
                         <div class="w-full h-full grid grid-cols-3 gap-y-20 gap-x-10">
-                            <div v-for="product in products" :key="product.id">
+                            <router-link :to="{name: 'ProductDetail', params: {brand: product.brand, id: product.id}}" v-for="product in products" :key="product.id">
                                 <div class="relative w-full h-[500px] flex flex-col justify-center items-center bg-white rounded-2xl shadow-xl p-10">
                                     <div class="m-1">
                                         <img :src="product.images[0]" alt="product" width="300" height="300">
@@ -71,7 +71,7 @@ const resetFilter = () => {
                                         <button class="w-6 h-6 bg-blue-400 rounded-full font-semibold">></button>
                                     </div> -->
                                 </div>
-                            </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
