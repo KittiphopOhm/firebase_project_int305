@@ -38,7 +38,7 @@ const user = ref({
                     <div class="w-full bg-blue-300 p-3 rounded-lg cursor-pointer text-center">
                         <button @click="$emit('submitForm', user)" class="cursor-pointer">Save</button>
                     </div>
-                    <router-link :to="{name: 'Home'}" class="w-full bg-gray-300 p-3 rounded-lg cursor-pointer text-center">
+                    <router-link :to="{name: 'ProductList'}" class="w-full bg-gray-300 p-3 rounded-lg cursor-pointer text-center">
                         <button class="cursor-pointer">Cancel</button>
                     </router-link>
                 </div>

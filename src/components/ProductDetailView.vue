@@ -12,7 +12,7 @@ const selectedImage = ref(0)
 </script>
 
 <template>
-    <div class="min-h-screen bg-white mt-10">
+    <div class="relative flex justify-center items-center h-full bg-white mt-5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
                 <div class="order-1">
@@ -85,13 +85,9 @@ const selectedImage = ref(0)
                             </div>
                         </div>
                     </div>
-
                     <div class="space-y-3 sm:space-y-4 mt-10 sm:mb-12">
-                        <button class="w-full bg-blue-600 text-white py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg hover:bg-blue-700 transition-colors duration-200">
-                            Add to Cart
-                        </button>
-                        <button class="w-full border-2 border-blue-600 text-blue-600 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg hover:bg-blue-50 transition-colors duration-200">
-                            Buy Now
+                        <button class="w-full bg-blue-400 text-white py-3 sm:py-4 rounded-xl font-medium text-base sm:text-lg hover:bg-blue-700 transition-colors duration-200">
+                            Buy
                         </button>
                     </div>
                 </div>

@@ -9,8 +9,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: App,
+      redirect: '/products'
     },
     {
       path: '/login',

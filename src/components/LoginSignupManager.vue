@@ -19,7 +19,7 @@ const submit = async (user) => {
             password: hashPassword,
             createAt: serverTimestamp()
         })
-        router.push({name: 'Home'})
+        router.push({name: 'ProductList'})
     } else {
         return
     }
