@@ -24,7 +24,7 @@ const props = defineProps({
                 </div>
             </div>
         </div>
-        <div class="pt-15">
+        <div class="pt-10">
             <slot />
         </div>
     </div>

@@ -1,4 +1,5 @@
 <script setup>
+import { watch } from 'vue';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -12,6 +13,11 @@ const emits = defineEmits(['filter'])
 const route = useRoute()
 const brand = computed(() => route.params.brand)
 const categories = ref([])
+
+watch(brand, () => {
+    categories.value = []
+})
+
 const resetFilter = () => {
   categories.value = []
   emits('filter', [])
@@ -61,9 +67,9 @@ const resetFilter = () => {
                                     <div>
                                         <p class="font-semibold text-[20px]">${{ product.price.toFixed(2) }}</p>
                                     </div>
-                                    <div class="absolute bottom-10 right-10">
+                                    <!-- <div class="absolute bottom-10 right-10">
                                         <button class="w-6 h-6 bg-blue-400 rounded-full font-semibold">></button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
