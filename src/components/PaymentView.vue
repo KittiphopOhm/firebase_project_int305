@@ -195,11 +195,6 @@ const formData = ref({
                 <span>${{ product?.price?.toFixed(2) }}</span>
               </div>
             </div>
-            <div class="mt-6 pt-6 border-t border-gray-300">
-              <p class="text-sm text-gray-600">
-                จัดส่งฟรีภายใน 2-3 วันทำการ
-              </p>
-            </div>
           </div>
         </div>
       </div>

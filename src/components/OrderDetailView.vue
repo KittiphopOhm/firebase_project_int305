@@ -1,4 +1,5 @@
 <script setup>
+const emits = defineEmits(['confirmStatus'])
 const props = defineProps({
     orderDetail: {
         type: Object,
@@ -33,7 +34,7 @@ const props = defineProps({
                   Status
                 </h3>
               </div>
-              <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+              <span :class="orderDetail?.status === 'Pending' ? 'px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium' : 'px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium'">
                 {{ orderDetail?.status }}
               </span>
             </div>
@@ -143,8 +144,11 @@ const props = defineProps({
             </div>
 
             <div class="mt-6 space-y-3">
-              <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition">
+              <button @click="$emit('confirmStatus', orderDetail.id)" v-if="orderDetail?.status === 'Pending'" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition">
                 Confirm Receipt
+              </button>
+              <button v-if="orderDetail?.status === 'Confirm'" class="w-full text-gray-500 border-2 border-gray-400 font-medium py-3 px-4 rounded-lg transition">
+                Confirmed
               </button>
             </div>
           </div>

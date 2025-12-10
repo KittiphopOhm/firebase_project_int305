@@ -35,7 +35,7 @@ const props = defineProps({
                 </div>
                 <p class="text-sm text-gray-600 mb-1">Ordered on {{ order?.date?.toDate().toLocaleString('th-TH') }}</p>
                 <span class="text-sm font-semibold">Status: </span>
-                <span class="text-sm font-semibold text-blue-500">
+                <span :class="order?.status === 'Pending' ? 'text-sm font-semibold text-blue-500' : 'text-sm font-semibold text-green-500'">
                     {{ order?.status }}
                 </span>
                 </div>
