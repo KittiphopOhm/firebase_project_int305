@@ -19,7 +19,6 @@ const fetchOrders = () => {
             console.log(orders.value);
             
         })
-
     })
 }
 

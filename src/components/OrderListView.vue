@@ -33,10 +33,11 @@ const props = defineProps({
                     Order #{{ order.id }}
                     </h3>
                 </div>
-                <p class="text-sm text-gray-600 mb-1">สั่งซื้อเมื่อ {{ order?.date?.toDate() }}</p>
-                <p class="text-sm text-green-600">
-                    Status {{ order.deliveredDate }}
-                </p>
+                <p class="text-sm text-gray-600 mb-1">Ordered on {{ order?.date?.toDate().toLocaleString('th-TH') }}</p>
+                <span class="text-sm font-semibold">Status: </span>
+                <span class="text-sm font-semibold text-blue-500">
+                    {{ order?.status }}
+                </span>
                 </div>
 
                 <div class="text-left lg:text-right">
@@ -48,7 +49,7 @@ const props = defineProps({
             <div class="border-t border-gray-200 pt-4">
                 <div class="flex flex-wrap gap-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-16 h-16 bg-gray-100 rounded-lg">
+                    <div class="w-16 h-16 rounded-lg">
                         <img :src="order?.product?.images?.[0]" alt="Product">
                     </div>
                     <div>

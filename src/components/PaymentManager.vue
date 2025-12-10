@@ -26,6 +26,7 @@ const isSuccessfully = ref('')
 const createOrder = async (orderData) => {
     orderData.product = product.value
     orderData.date = serverTimestamp()
+    orderData.status = "Pending"
     const orderColl = collection(db, "orders")
     const addOrder = await addDoc(orderColl, orderData)
     

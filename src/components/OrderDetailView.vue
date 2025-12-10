@@ -20,8 +20,8 @@ const props = defineProps({
         <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-2">
           Order Details
         </h2>
-        <p class="text-gray-600">Order number: {{ orderDetail?.id }}</p>
-        <p class="text-sm text-gray-500">สั่งซื้อเมื่อ {{ orderDetail?.date?.toDate() }}</p>
+        <p class="font-semibold text-gray-600">Order number: {{ orderDetail?.id }}</p>
+        <p class="text-sm text-gray-500">Ordered on {{ orderDetail?.date?.toDate().toLocaleString('th-TH') }}</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -34,7 +34,7 @@ const props = defineProps({
                 </h3>
               </div>
               <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                Pending
+                {{ orderDetail?.status }}
               </span>
             </div>
 
@@ -51,7 +51,7 @@ const props = defineProps({
                   <p class="font-medium text-gray-900">
                     Pay successfully
                   </p>
-                  <p class="text-sm text-gray-500 mt-1">{{ orderDetail?.date?.toDate() }}</p>
+                  <p class="text-sm text-gray-500 mt-1">{{ orderDetail?.date?.toDate().toLocaleString('th-TH') }}</p>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ const props = defineProps({
             <div class="space-y-6">
               <div 
                 class="flex gap-4 pb-6 border-b border-gray-200 last:border-b-0 last:pb-0">
-                <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-100 rounded-lg">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-lg">
                     <img :src="orderDetail?.product?.images?.[0]" alt="">
                 </div>
                 <div class="flex-1">
