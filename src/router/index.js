@@ -3,6 +3,7 @@ import LoginSignupManager from '@/components/LoginSignupManager.vue'
 import ProductManager from '@/components/ProductManager.vue'
 import ProductDetail from '@/components/ProductDetail.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import PaymentManager from '@/components/PaymentManager.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: '/products/:brand/:id',
       name: 'ProductDetail',
       component: ProductDetail,
+    },
+    {
+      path: '/payment',
+      name: 'Payment',
+      component: PaymentManager,
     },
   ],
 })
