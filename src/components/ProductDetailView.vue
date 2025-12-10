@@ -85,11 +85,11 @@ const selectedImage = ref(0)
                             </div>
                         </div>
                     </div>
-                    <div class="space-y-3 sm:space-y-4 mt-10 sm:mb-12">
+                    <router-link :to="{name: 'Payment', params: {id: product.id}}" class="space-y-3 sm:space-y-4 mt-10 sm:mb-12">
                         <button class="w-full bg-blue-400 text-white py-3 sm:py-4 rounded-xl font-medium text-base sm:text-lg hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
                             Buy
                         </button>
-                    </div>
+                    </router-link>
                 </div>
             </div>
         </div>
