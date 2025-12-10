@@ -144,7 +144,7 @@ const props = defineProps({
             </div>
 
             <div class="mt-6 space-y-3">
-              <button @click="$emit('confirmStatus', orderDetail.id)" v-if="orderDetail?.status === 'Pending'" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition">
+              <button @click="$emit('confirmStatus', orderDetail.id)" v-if="orderDetail?.status === 'Pending'" class="w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white font-medium py-3 px-4 rounded-lg transition">
                 Confirm Receipt
               </button>
               <button v-if="orderDetail?.status === 'Confirm'" class="w-full text-gray-500 border-2 border-gray-400 font-medium py-3 px-4 rounded-lg transition">

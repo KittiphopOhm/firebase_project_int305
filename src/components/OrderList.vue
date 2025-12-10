@@ -1,7 +1,7 @@
 <script setup>
 import OrderListView from './OrderListView.vue';
 import Navbar from './Navbar.vue';
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import db from '../../firebase/init';
 import { onMounted, ref } from 'vue';
 
@@ -9,7 +9,7 @@ import { onMounted, ref } from 'vue';
 const orders = ref([])
 const fetchOrders = () => {
     const orderColl = collection(db, "orders")
-    const qry = query(orderColl)
+    const qry = query(orderColl, orderBy("date", "desc"))
     onSnapshot(qry, (snapshot) => {
         orders.value = []
         snapshot.forEach((doc) => {
