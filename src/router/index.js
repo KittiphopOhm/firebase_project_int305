@@ -4,6 +4,8 @@ import ProductManager from '@/components/ProductManager.vue'
 import ProductDetail from '@/components/ProductDetail.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import PaymentManager from '@/components/PaymentManager.vue'
+import OrderDetail from '@/components/OrderDetail.vue'
+import OrderList from '@/components/OrderList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +43,16 @@ const router = createRouter({
       path: '/payment/:id',
       name: 'Payment',
       component: PaymentManager,
+    },
+    {
+      path: '/orders/:id',
+      name: 'OrderDetail',
+      component: OrderDetail,
+    },
+    {
+      path: '/orders',
+      name: 'OrderList',
+      component: OrderList,
     },
   ],
 })

@@ -1,12 +1,13 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import PaymentView from './PaymentView.vue';
-import { useRoute } from 'vue-router';
-import { addDoc, collection, doc, getDoc } from 'firebase/firestore';
+import { useRoute, useRouter } from 'vue-router';
+import { addDoc, collection, doc, getDoc, serverTimestamp } from 'firebase/firestore';
 import db from '../../firebase/init';
 import Alert from './Alert.vue';
 
 const route = useRoute()
+const router = useRouter()
 const id = route.params.id
 const product = ref({})
 const fetchProduct = async () => {
@@ -24,8 +25,10 @@ const title = ref('')
 const isSuccessfully = ref('')
 const createOrder = async (orderData) => {
     orderData.product = product.value
+    orderData.date = serverTimestamp()
     const orderColl = collection(db, "orders")
     const addOrder = await addDoc(orderColl, orderData)
+    
     if (addOrder) {
         isShow.value = true
         title.value = 'Your order has been completed successfully.'
@@ -34,7 +37,8 @@ const createOrder = async (orderData) => {
             isShow.value = false
             title.value = ''
             isSuccessfully.value = ''
-        }, 2000)
+            router.push({name: 'OrderDetail', params: {id: addOrder.id}})
+        }, 1000)
     } else {
         isShow.value = true
         title.value = 'Your order could not be completed.'
@@ -43,7 +47,8 @@ const createOrder = async (orderData) => {
             isShow.value = false
             title.value = ''
             isSuccessfully.value = ''
-        }, 2000)
+            router.push({name: 'ProductList'})
+        }, 1000)
     }
 }
 
