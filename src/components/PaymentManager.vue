@@ -72,5 +72,4 @@ onMounted(() => {
 <template>
     <Alert :isShow="isShow" :title="title" :isSuccessfully="isSuccessfully" />
     <PaymentView :product="product" @createOrder="createOrder" />
-    
 </template>

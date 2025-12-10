@@ -1,5 +1,4 @@
 <script setup>
-
 const props = defineProps({
     isShow: {
         type: Boolean
@@ -11,8 +10,6 @@ const props = defineProps({
         type: String
     }
 })
-
-
 </script>
 
 <template>
