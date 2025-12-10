@@ -1,60 +1,10 @@
 <script setup>
-import { ref } from 'vue';
-
 const props = defineProps({
     orderDetail: {
         type: Object,
         required: true
     }
 })
-
-
-const order = ref({
-  orderNumber: 'W88234567890',
-  orderDate: '10 ธันวาคม 2567',
-  status: 'กำลังจัดส่ง',
-  estimatedDelivery: '12-13 ธันวาคม 2567',
-  items: [
-    {
-      id: 1,
-      name: 'MacBook Pro 14"',
-      specs: 'ชิป M3 Pro, RAM 18GB, SSD 512GB, สีเทาสเปซเกรย์',
-      quantity: 1,
-      price: 79900,
-      image: ''
-    },
-    {
-      id: 2,
-      name: 'Magic Mouse',
-      specs: 'สีดำ, USB-C',
-      quantity: 1,
-      price: 3900,
-      image: ''
-    }
-  ],
-  shipping: {
-    method: 'จัดส่งมาตรฐาน',
-    cost: 0,
-    address: {
-      name: 'คุณสมชาย ใจดี',
-      street: '123/45 ถนนสุขุมวิท',
-      city: 'กรุงเทพมหานคร',
-      postalCode: '10110',
-      phone: '081-234-5678'
-    }
-  },
-  payment: {
-    method: 'บัตรเครดิต',
-    lastDigits: '4242'
-  },
-  subtotal: 83800,
-  tax: 0,
-  total: 83800
-});
-
-const formatPrice = (price) => {
-  return new Intl.NumberFormat('th-TH').format(price);
-};
 </script>
 
 <template>
@@ -64,7 +14,7 @@ const formatPrice = (price) => {
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
         </svg>
-        <span class="text-sm font-medium">ย้อนกลับ</span>
+        <router-link :to="{name: 'OrderList'}" class="text-sm font-medium">Back</router-link>
       </button>
       <div class="mb-8">
         <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-2">
@@ -84,7 +34,7 @@ const formatPrice = (price) => {
                 </h3>
               </div>
               <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                {{ order.status }}
+                Pending
               </span>
             </div>
 
@@ -139,6 +89,7 @@ const formatPrice = (price) => {
               Address
             </h3>
             <div class="text-gray-700 space-y-1">
+              <p class="font-medium">{{ orderDetail.email }}</p>
               <p class="font-medium">Address: {{ orderDetail.address }}</p>
               <p>City: {{ orderDetail.city }}</p>
               <p>Zip code: {{ orderDetail.zipCode }}</p>
@@ -156,8 +107,8 @@ const formatPrice = (price) => {
                 <path d="M2 10h20" stroke-width="2"/>
               </svg>
               <div>
-                <p class="font-medium text-gray-900">{{ order.payment.method }}</p>
-                <p class="text-sm text-gray-600">สิ้นสุดด้วย {{ order.payment.lastDigits }}</p>
+                <p class="font-medium text-gray-900">{{ orderDetail?.cardName }}</p>
+                <p class="text-sm text-gray-600">{{ orderDetail?.cvv }}</p>
               </div>
             </div>
           </div>
@@ -193,7 +144,7 @@ const formatPrice = (price) => {
 
             <div class="mt-6 space-y-3">
               <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition">
-                ติดตามพัสดุ
+                Confirm Receipt
               </button>
             </div>
           </div>
