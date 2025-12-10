@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import PaymentView from './PaymentView.vue';
 import { useRoute, useRouter } from 'vue-router';
-import { addDoc, collection, doc, getDoc, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, increment, onSnapshot, serverTimestamp, updateDoc } from 'firebase/firestore';
 import db from '../../firebase/init';
 import Alert from './Alert.vue';
 
@@ -13,10 +13,15 @@ const product = ref({})
 const fetchProduct = async () => {
     if (id) {
         const productRef = doc(db, "products", id)
-        const productSnap = await getDoc(productRef)
-        let data = productSnap.data()
-        data.id = productSnap.id
-        product.value = data
+        onSnapshot(productRef, (snapshot) => {
+            product.value = {}
+            let data = snapshot.data()
+            data.id = snapshot.id
+            product.value = data
+            console.log(product.value.id);
+            
+
+        })
     }
 }
 
@@ -29,9 +34,11 @@ const createOrder = async (orderData) => {
     orderData.status = "Pending"
     const orderColl = collection(db, "orders")
     const addOrder = await addDoc(orderColl, orderData)
-    
-    
     if (addOrder) {
+        const productRef = doc(db, "products", product.value.id)
+        await updateDoc(productRef, {
+            stock: increment(-1)
+        })
         isShow.value = true
         title.value = 'Your order has been completed successfully.'
         isSuccessfully.value = 'Yes'
