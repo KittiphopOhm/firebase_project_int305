@@ -1,5 +1,5 @@
 <script setup>
-import ProductView from './ProductView.vue';
+import ProductView from './ProductListView.vue';
 import Navbar from './Navbar.vue';
 import { computed, onMounted, ref, watch } from 'vue';
 import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore';
