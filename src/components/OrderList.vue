@@ -1,16 +1,18 @@
 <script setup>
 import OrderListView from './OrderListView.vue';
 import Navbar from './Navbar.vue';
-import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import { collection, getCountFromServer, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import db from '../../firebase/init';
 import { onMounted, ref } from 'vue';
 
-
 const orders = ref([])
 const email = ref(sessionStorage.getItem("email"))
-const fetchOrders = () => {
+const countOrder = ref(0)
+const fetchOrders = async () => {
     const orderColl = collection(db, "orders")
     const qry = query(orderColl, where("email", "==", email.value), orderBy("date", "desc"))
+    const snap = await getCountFromServer(qry)
+    countOrder.value = snap.data().count
     onSnapshot(qry, (snapshot) => {
         orders.value = []
         snapshot.forEach((doc) => {
@@ -21,12 +23,12 @@ const fetchOrders = () => {
     })
 }
 
-const filterOrders = (status) => {
-    console.log(status);
-    
+const filterOrders = async (status) => {
     if (!status.includes("All") && status.length > 0) { 
         const orderColl = collection(db, "orders")
         const qry = query(orderColl, where("email", "==", email.value), where("status", "==", status))
+        const snap = await getCountFromServer(qry)
+        countOrder.value = snap.data().count
         onSnapshot(qry, (snapshot) => {
             orders.value = []
             snapshot.forEach((doc) => {
@@ -50,5 +52,5 @@ onMounted(() => {
 
 <template>
     <Navbar />
-    <OrderListView :orders="orders" @filter-orders="filterOrders" />
+    <OrderListView :orders="orders" @filter-orders="filterOrders" :countOrders="countOrder" />
 </template>

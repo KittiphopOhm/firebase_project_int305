@@ -7,6 +7,9 @@ const props = defineProps({
     products: {
         type: Array,
         required: true
+    },
+    countProducts: {
+        type: Number
     }
 });
 const emits = defineEmits(['filter']);
@@ -29,44 +32,47 @@ const resetFilter = () => {
     <div class="w-full h-full space-y-5 bg-gray-50">
         <div class="w-full h-full p-4 sm:p-6 md:p-10">
             <div class="w-full h-full">
-                
-                <!-- Title -->
                 <div class="mb-5">
                     <h1 class="text-[32px] sm:text-[40px] md:text-[50px] font-semibold">
                         {{ !brand ? "Products" : brand }}
                     </h1>
                 </div>
 
-                <!-- Filter -->
-                <form class="mb-5 flex flex-wrap gap-2">
-                    <input v-model="categories" @change="$emit('filter', categories)" 
-                        value="Headphones" type="checkbox"
-                        class="btn checked:bg-blue-400 checked:border-blue-400"
-                        aria-label="Headphones"/>
+                <div class="w-full flex justify-between items-center">
+                    <form class="mb-5 flex flex-wrap gap-2">
+                        <input v-model="categories" @change="$emit('filter', categories)" 
+                            value="Headphones" type="checkbox"
+                            class="btn checked:bg-blue-400 checked:border-blue-400"
+                            aria-label="Headphones"/>
 
-                    <input v-model="categories" @change="$emit('filter', categories)" 
-                        value="Gaming Headset" type="checkbox"
-                        class="btn checked:bg-blue-400 checked:border-blue-400"
-                        aria-label="Gaming Headset"/>
+                        <input v-model="categories" @change="$emit('filter', categories)" 
+                            value="Gaming Headset" type="checkbox"
+                            class="btn checked:bg-blue-400 checked:border-blue-400"
+                            aria-label="Gaming Headset"/>
 
-                    <input v-model="categories" @change="$emit('filter', categories)" 
-                        value="Earbuds" type="checkbox"
-                        class="btn checked:bg-blue-400 checked:border-blue-400"
-                        aria-label="Earbuds"/>
+                        <input v-model="categories" @change="$emit('filter', categories)" 
+                            value="Earbuds" type="checkbox"
+                            class="btn checked:bg-blue-400 checked:border-blue-400"
+                            aria-label="Earbuds"/>
 
-                    <input v-model="categories" @change="$emit('filter', categories)" 
-                        value="Speaker" type="checkbox"
-                        class="btn checked:bg-blue-400 checked:border-blue-400"
-                        aria-label="Speaker"/>
+                        <input v-model="categories" @change="$emit('filter', categories)" 
+                            value="Speaker" type="checkbox"
+                            class="btn checked:bg-blue-400 checked:border-blue-400"
+                            aria-label="Speaker"/>
 
-                    <input @click="resetFilter"
-                        class="btn btn-square checked:bg-blue-400 checked:border-blue-400"
-                        type="reset" value="×"/>
-                </form>
+                        <input @click="resetFilter"
+                            class="btn btn-square checked:bg-blue-400 checked:border-blue-400"
+                            type="reset" value="×"/>
+                    </form>
 
-                <!-- Product List -->
+                    <div>
+                        <div class="btn">
+                            <p>Product Total: {{ countProducts }}</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="w-full h-full flex flex-col justify-center items-center">
-
                     <div v-if="products.length <= 0">
                         <h1 class="text-[32px] sm:text-[40px] md:text-[50px] m-3 text-gray-400">
                             No Products
@@ -135,7 +141,6 @@ const resetFilter = () => {
 
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

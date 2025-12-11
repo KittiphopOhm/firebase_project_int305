@@ -5,6 +5,9 @@ const props = defineProps({
   orders: {
     type: Array,
     required: true
+  },
+  countOrders: {
+    type: Number
   }
 })
 
@@ -17,7 +20,7 @@ const resetFilter = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="h-full bg-white">
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
       <div class="mb-8">
         <form class="mb-5">
@@ -38,7 +41,7 @@ const resetFilter = () => {
         <h2 v-else class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-2">
           Your Orders
         </h2>
-        <p v-if="orders.length > 0" class="text-lg text-gray-600 mb-1">Total orders: {{ orders.length }}</p>
+        <p v-if="orders.length > 0" class="text-lg text-gray-600 mb-1">Total orders: {{ countOrders }}</p>
       </div>
 
 
