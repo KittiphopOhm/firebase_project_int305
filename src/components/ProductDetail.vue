@@ -5,7 +5,6 @@ import db from '../../firebase/init';
 import { doc, onSnapshot } from 'firebase/firestore';
 import ProductDetailView from './ProductDetailView.vue';
 import Navbar from './Navbar.vue';
-import Alert from './Alert.vue';
 
 const route = useRoute()
 const router = useRouter()
@@ -23,25 +22,13 @@ const fetchProduct = async () => {
     }
 }
 
-const isShow = ref(false)
-const title = ref('')
-const isSuccessfully = ref('')
 const toBuy = () => {
     console.log(product.value);
     if (product.value.stock > 0) {
         router.push({name: 'Payment', params: {id: product.value.id}})
     } else {
-        isShow.value = true
-        title.value = 'Out of stock'
-        isSuccessfully.value = 'No'
-        setTimeout(() => {
-            isShow.value = false
-            title.value = ''
-            isSuccessfully.value = ''
-            router.push({name: 'ProductList'})
-        }, 1000)
+        alert(`Out of stock`)
     }
-    
 }
 
 onMounted(() => {
@@ -53,6 +40,5 @@ onMounted(() => {
 
 <template>
     <Navbar />
-    <Alert :isShow="isShow" :title="title" :isSuccessfully="isSuccessfully" />
     <ProductDetailView :product="product" @toBuyProduct="toBuy" />
 </template>
