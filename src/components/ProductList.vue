@@ -1,6 +1,6 @@
 <script setup>
-import ProductView from './ProductListView.vue';
-import Navbar from './Navbar.vue';
+import ProductView from './view/ProductListView.vue';
+import Navbar from './view/Navbar.vue';
 import { computed, onMounted, ref, watch } from 'vue';
 import { collection, getCountFromServer, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import db from '../../firebase/init';
@@ -38,7 +38,7 @@ watch(brand, () => {
 const filterByCategories = async (categories) => {
     const productsColl = collection(db, "products")
     if (categories.length > 0 && brand.value) {
-        const qry = query(productsColl,where("brand", "==", brand.value), where("category", "in", categories), orderBy("brand", "asc"))
+        const qry = query(productsColl, where("brand", "==", brand.value), where("category", "in", categories), orderBy("brand", "asc"))
         const snap = await getCountFromServer(qry)
         countProduct.value = snap.data().count
         onSnapshot(qry, (snapshot) => {

@@ -3,8 +3,8 @@ import { onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import db from '../../firebase/init';
 import { doc, onSnapshot } from 'firebase/firestore';
-import ProductDetailView from './ProductDetailView.vue';
-import Navbar from './Navbar.vue';
+import ProductDetailView from './view/ProductDetailView.vue';
+import Navbar from './view/Navbar.vue';
 
 const route = useRoute()
 const router = useRouter()
@@ -25,7 +25,7 @@ const fetchProduct = async () => {
 const toBuy = () => {
     console.log(product.value);
     if (product.value.stock > 0) {
-        router.push({name: 'Payment', params: {id: product.value.id}})
+        router.push({ name: 'Payment', params: { id: product.value.id } })
     } else {
         alert(`Out of stock`)
     }

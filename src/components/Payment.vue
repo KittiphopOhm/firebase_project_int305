@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import PaymentView from './PaymentView.vue';
+import PaymentView from './view/PaymentView.vue';
 import { useRoute, useRouter } from 'vue-router';
 import { addDoc, collection, doc, getDoc, increment, onSnapshot, serverTimestamp, updateDoc } from 'firebase/firestore';
 import db from '../../firebase/init';
@@ -19,7 +19,7 @@ const fetchProduct = async () => {
             data.id = snapshot.id
             product.value = data
             console.log(product.value.id);
-            
+
 
         })
     }
@@ -46,7 +46,7 @@ const createOrder = async (orderData) => {
             isShow.value = false
             title.value = ''
             isSuccessfully.value = ''
-            router.push({name: 'OrderDetail', params: {id: addOrder.id}})
+            router.push({ name: 'OrderDetail', params: { id: addOrder.id } })
         }, 1000)
     } else {
         isShow.value = true
@@ -56,7 +56,7 @@ const createOrder = async (orderData) => {
             isShow.value = false
             title.value = ''
             isSuccessfully.value = ''
-            router.push({name: 'ProductList'})
+            router.push({ name: 'ProductList' })
         }, 1000)
     }
 }

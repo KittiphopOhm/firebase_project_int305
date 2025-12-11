@@ -1,6 +1,6 @@
 <script setup>
 import OrderListView from './OrderListView.vue';
-import Navbar from './Navbar.vue';
+import Navbar from './view/Navbar.vue';
 import { collection, getCountFromServer, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import db from '../../firebase/init';
 import { onMounted, ref } from 'vue';
@@ -24,7 +24,7 @@ const fetchOrders = async () => {
 }
 
 const filterOrders = async (status) => {
-    if (!status.includes("All") && status.length > 0) { 
+    if (!status.includes("All") && status.length > 0) {
         const orderColl = collection(db, "orders")
         const qry = query(orderColl, where("email", "==", email.value), where("status", "==", status))
         const snap = await getCountFromServer(qry)

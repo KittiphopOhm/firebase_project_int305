@@ -1,6 +1,6 @@
 <script setup>
-import OrderDetailView from './OrderDetailView.vue';
-import Navbar from './Navbar.vue';
+import OrderDetailView from './view/OrderDetailView.vue';
+import Navbar from './view/Navbar.vue';
 import { useRoute } from 'vue-router';
 import { collection, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
 import db from '../../firebase/init';

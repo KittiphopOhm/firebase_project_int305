@@ -1,5 +1,5 @@
 <script setup>
-import LoginSignupView from './LoginSignupView.vue';
+import LoginSignupView from './view/LoginSignupView.vue';
 import db from '../../firebase/init';
 import bcrypt from "bcryptjs"
 import { addDoc, collection, doc, getDoc, getDocs, query, serverTimestamp, where } from 'firebase/firestore';

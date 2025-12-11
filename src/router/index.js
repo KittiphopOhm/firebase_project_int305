@@ -1,9 +1,9 @@
 import App from '@/App.vue'
-import LoginSignupManager from '@/components/LoginSignupManager.vue'
+import LoginSignupManager from '@/components/LoginSignup.vue'
 import ProductManager from '@/components/ProductList.vue'
 import ProductDetail from '@/components/ProductDetail.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import PaymentManager from '@/components/PaymentManager.vue'
+import PaymentManager from '@/components/Payment.vue'
 import OrderDetail from '@/components/OrderDetail.vue'
 import OrderList from '@/components/OrderList.vue'
 
