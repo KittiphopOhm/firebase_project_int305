@@ -38,7 +38,8 @@ watch(brand, () => {
 const filterByCategories = async (categories) => {
     const productsColl = collection(db, "products")
     if (categories.length > 0 && brand.value) {
-        const qry = query(productsColl, where("brand", "==", brand.value), where("category", "in", categories), orderBy("brand", "asc"))
+        const qry = query(productsColl, where("brand", "==", brand.value), where("category", "in", categories),
+         orderBy("brand", "asc"))
         const snap = await getCountFromServer(qry)
         countProduct.value = snap.data().count
         onSnapshot(qry, (snapshot) => {

@@ -21,7 +21,6 @@ const fetchBrnads = () => {
         })
     })
 }
-
 const fetchUserFromSession = () => {
     username.value = sessionStorage.getItem("username")
     console.log(username.value);
