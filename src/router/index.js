@@ -43,6 +43,9 @@ const router = createRouter({
       path: '/payment/:id',
       name: 'Payment',
       component: PaymentManager,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/orders/:id',
@@ -53,8 +56,24 @@ const router = createRouter({
       path: '/orders',
       name: 'OrderList',
       component: OrderList,
+      meta: {
+        requiresAuth: true
+      }
     },
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    const email = sessionStorage.getItem("email")
+    if (email) {
+      next()
+    } else {
+      next({name: 'Login'})
+    }
+  } else {
+    next()
+  }
 })
 
 export default router
