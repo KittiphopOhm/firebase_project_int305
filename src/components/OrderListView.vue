@@ -20,13 +20,6 @@ const resetFilter = () => {
   <div class="min-h-screen bg-white">
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
       <div class="mb-8">
-        <h2 v-if="orders.length <= 0" class="text-3xl text-center sm:text-4xl font-semibold text-gray-400 mb-2">
-          No Order
-        </h2>
-        <h2 v-else class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-2">
-          Your Orders
-        </h2>
-        <p v-if="orders.length > 0" class="text-lg text-gray-600 mb-1">Total orders: {{ orders.length }}</p>
         <form class="mb-5">
           <input v-model="status" @change="$emit('filterOrders', status)" value="All"
             class="btn appearance-none px-4 py-2 rounded-md borderborder-gray-300 cursor-pointer checked:bg-blue-400 checked:border-blue-400 checked:text-white" type="radio" name="frameworks"
@@ -40,6 +33,13 @@ const resetFilter = () => {
           <input @click="resetFilter" class="btn btn-square  ml-1"
             type="reset" value="×" />
         </form>
+        <h2 v-if="orders.length <= 0" class="text-3xl text-center sm:text-4xl font-semibold text-gray-400 mb-2">
+          No Order
+        </h2>
+        <h2 v-else class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-2">
+          Your Orders
+        </h2>
+        <p v-if="orders.length > 0" class="text-lg text-gray-600 mb-1">Total orders: {{ orders.length }}</p>
       </div>
 
 

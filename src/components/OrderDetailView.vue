@@ -147,7 +147,7 @@ const props = defineProps({
               <button @click="$emit('confirmStatus', orderDetail.id)" v-if="orderDetail?.status === 'Pending'" class="w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white font-medium py-3 px-4 rounded-lg transition">
                 Confirm Receipt
               </button>
-              <button v-if="orderDetail?.status === 'Confirm'" class="w-full text-gray-400 border border-gray-400 font-medium py-3 px-4 rounded-lg transition">
+              <button v-if="orderDetail?.status === 'Confirm'" class="w-full text-gray-400 border cursor-no-drop border-gray-400 font-medium py-3 px-4 rounded-lg transition">
                 Confirmed
               </button>
             </div>
