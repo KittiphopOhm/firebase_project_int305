@@ -23,7 +23,6 @@ const fetchProduct = async () => {
 }
 
 const toBuy = () => {
-    console.log(product.value);
     if (product.value.stock > 0) {
         router.push({ name: 'Payment', params: { id: product.value.id } })
     } else {

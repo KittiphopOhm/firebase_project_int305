@@ -18,9 +18,6 @@ const fetchProduct = async () => {
             let data = snapshot.data()
             data.id = snapshot.id
             product.value = data
-            console.log(product.value.id);
-
-
         })
     }
 }
