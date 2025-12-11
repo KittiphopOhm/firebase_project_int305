@@ -3,7 +3,12 @@ import { ref, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute()
-const emits = defineEmits(["register"])
+const props = defineProps({
+    isReset: {
+        type: Boolean
+    }
+})
+const emits = defineEmits(["register", "login"])
 const userLogin = ref({
     email: '',
     password: ''
@@ -15,12 +20,19 @@ const userFormat = ref({
     password: '',
     confirmPassword: ''
 })
+const showPassword = ref(false);
 
 watchEffect(() => {
-    console.log(userFormat.value.email);
-    
+    if (props.isReset) {
+        userLogin.value.email = ''
+        userLogin.value.password = ''
+
+        userFormat.value.username = ''
+        userFormat.value.email = ''
+        userFormat.value.password = ''
+        userFormat.value.confirmPassword = '' 
+    }
 })
-const showPassword = ref(false);
 </script>
 
 <template>
@@ -81,6 +93,7 @@ const showPassword = ref(false);
             </div>
 
             <button
+              @click="$emit('login', userLogin)"
               class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition"
             >
                 Login

@@ -2,17 +2,16 @@
 import LoginSignupView from './LoginSignupView.vue';
 import db from '../../firebase/init';
 import bcrypt from "bcryptjs"
-import { addDoc, collection, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
 import { useRoute, useRouter } from 'vue-router';
 import Alert from './Alert.vue';
 import { ref } from 'vue';
 
 const router = useRouter()
-const route = useRoute()
-
 const isShow = ref(false)
 const title = ref('')
 const isSuccessfully = ref('')
+const resetForm = ref(false)
 const register = async (user) => {
     if (user.password !== user.confirmPassword) {
         alert("Password not valid")
@@ -35,21 +34,50 @@ const register = async (user) => {
                 setTimeout(() => {
                     isShow.value = false
                     title.value = ""
-                    isSuccessfully.value = "" 
-                    router.push({name: 'Login'})
+                    isSuccessfully.value = ""
+                    router.push({ name: 'Login' })
                 }, 1500)
             }
         } else {
-                isShow.value = true
-                title.value = "Email exists!!"
-                isSuccessfully.value = "No"
-                setTimeout(() => {
-                    isShow.value = false
-                    title.value = ""
-                    isSuccessfully.value = "" 
-                }, 1500)
+            isShow.value = true
+            title.value = "Email is already associated with an account."
+            isSuccessfully.value = "No"
+            resetForm.value = true
+            setTimeout(() => {
+                isShow.value = false
+                title.value = ""
+                isSuccessfully.value = ""
+                resetForm.value = false
+            }, 1500)
         }
     }
+}
+
+const login = async (user) => {
+    const accountRef = collection(db, "accounts")
+    const qry = query(accountRef, where("email", "==", user.email))
+    const accountDoc = await getDocs(qry)
+    accountDoc.forEach(async (doc) => {
+        let data = doc.data()
+        data.id = doc.id
+        const isMatch = await bcrypt.compare(user.password, data.password)
+        if (isMatch) {
+            sessionStorage.setItem("username", data.username)
+            sessionStorage.setItem("email", data.email)
+            router.push({ name: 'ProductList' })
+        } else {
+            isShow.value = true
+            title.value = "Username Password is not valid"
+            isSuccessfully.value = "No"
+            resetForm.value = true
+            setTimeout(() => {
+                isShow.value = false
+                title.value = ""
+                isSuccessfully.value = ""
+                resetForm.value = false
+            }, 1500)
+        }
+    })
 }
 
 </script>
@@ -57,6 +85,6 @@ const register = async (user) => {
 <template>
     <div>
         <Alert :isShow="isShow" :title="title" :isSuccessfully="isSuccessfully" />
-        <LoginSignupView @register="register" />
+        <LoginSignupView @register="register" @login="login" :isReset="resetForm" />
     </div>
 </template>
