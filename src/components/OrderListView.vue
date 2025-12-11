@@ -30,8 +30,7 @@ const resetFilter = () => {
           <input v-model="status" @change="$emit('filterOrders', status)" value="Confirm"
             class="btn appearance-none px-4 py-2 rounded-md borderborder-gray-300 cursor-pointer checked:bg-blue-400 checked:border-blue-400 checked:text-white ml-1" type="radio" name="frameworks"
             aria-label="Confirm" />
-          <input @click="resetFilter" class="btn btn-square  ml-1"
-            type="reset" value="×" />
+          <button @click="resetFilter" class="btn btn-square ml-1">×</button>
         </form>
         <h2 v-if="orders.length <= 0" class="text-3xl text-center sm:text-4xl font-semibold text-gray-400 mb-2">
           No Order
