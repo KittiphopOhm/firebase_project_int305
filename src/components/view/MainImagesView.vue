@@ -22,7 +22,8 @@
                  left-4 bottom-24
                  sm:left-8 sm:bottom-32
                  md:left-12 md:bottom-36
-                 lg:left-16 lg:bottom-40">
+                 lg:left-16 lg:bottom-40
+                 bg-none">
 
                     <p class="font-semibold text-blue-500 
                     text-sm sm:text-base md:text-lg">

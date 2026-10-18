@@ -2,8 +2,8 @@
 import LoginSignupView from './view/LoginSignupView.vue';
 import db from '../../firebase/init';
 import bcrypt from "bcryptjs"
-import { addDoc, collection, doc, getDoc, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
-import { useRoute, useRouter } from 'vue-router';
+import { addDoc, collection, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
+import { useRouter } from 'vue-router';
 import Alert from './Alert.vue';
 import { ref } from 'vue';
 
